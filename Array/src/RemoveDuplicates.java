@@ -8,6 +8,9 @@ public class RemoveDuplicates {
 			arr[res++]=arr[i];
 		}
 		}
+		for(int i=0;i<res;i++) {
+			System.out.print(arr[i]+" ");
+		}
 		return res;
 		}
 	
