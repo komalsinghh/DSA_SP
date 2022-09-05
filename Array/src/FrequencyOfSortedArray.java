@@ -3,16 +3,15 @@ import java.util.Scanner;
 public class FrequencyOfSortedArray {
 	static void frequency(int[] arr,int n) {
 		int max=arr[0];
-		int cmax=0;
-		for(int i=0;i<n;i++) {
-			if(max!=arr[i]) {
-				System.out.println(max+" "+cmax);
-				cmax=0;
-			}
-			
-			if(max<=arr[i]) {
-				max=arr[i];
+		int cmax=1;
+		for(int i=1;i<n;i++) {
+			if(max==arr[i]) {
 				cmax++;
+			}
+			else {
+				System.out.println(max+" "+cmax);
+				cmax=1;
+				max=arr[i];
 			}
 			if(i==n-1) {
 				System.out.println(max+" "+cmax);

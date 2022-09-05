@@ -3,26 +3,23 @@ import java.util.Scanner;
 public class CountOnlyRepeated {
 	static int[] repeated(int[] arr,int n) {
 		int[] ans=new int[2];
-		int low=0,high=n-1,res=0;
+		int low=0,high=n-1;
 		int count=(n-(arr[n-1]-arr[0]));
-		if(count<=1) {
+		if(count==1) {
 			ans[0]=-1;ans[1]=-1;
 			return ans;
 		}
-		while(low<=high) {
-			int mid=(low+high)/2;
-			if((mid!=0 && arr[mid]==arr[mid-1])|| (mid!=n-1 && arr[mid]==arr[mid+1])) {
-				res=arr[mid];
-				break;
-			}
-			else if(arr[mid]>=arr[0]+mid) {
+		int mid=0;
+		while(low<high) {
+			 mid=(low+high)/2;
+			if(arr[mid]>=arr[0]+mid) { 
 				low=mid+1;
 			}
 			else {
-				high=mid-1;
+				high=mid;
 			}
 		}
-		ans[0]=res;
+		ans[0]=arr[mid];
 		ans[1]=count;
 		return ans;
 	}
