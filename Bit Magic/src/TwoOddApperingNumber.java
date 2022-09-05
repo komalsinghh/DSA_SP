@@ -14,7 +14,7 @@ public class TwoOddApperingNumber {
 				res2=res2^arr[i];
 			}
 		}
-		System.out.println(res1+" "+res2);
+		System.out.println("Missing Element"+res1+" "+res2);
 	}
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
