@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class CycleSort {
 	static void cycle(int[] arr,int n) {
+		int count=0;
 		 for(int cs=0;cs<n-1;cs++){
 	            int item=arr[cs];
 	            int pos=cs;
@@ -13,6 +14,9 @@ public class CycleSort {
 	            int temp=item;
 	            item=arr[pos];
 	            arr[pos]=temp;
+	            if(pos!=cs) {
+	            	count++;
+	            }
 	            while(pos!=cs){
 	                pos=cs;
 	                for(int i=cs+1;i<n;i++)
@@ -23,8 +27,13 @@ public class CycleSort {
 	                temp=item;
 	                item=arr[pos];
 	                arr[pos]=temp;
+	                if(pos!=cs) {
+		            	count++;
+		            }
+	               
 	            }
 	        }
+		 System.out.println("Swap Occures "+count);
 	}
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
