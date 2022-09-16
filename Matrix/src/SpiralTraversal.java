@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class SpiralTraversal {
 	static void traversal(int[][] arr,int r,int c) {
-		int top=0,left=0,right=c-1,bottom=c-1;
+		int top=0,left=0,right=c-1,bottom=r-1;
 		while(top<=bottom && left <=right) {
 			for(int i=left;i<=right;i++) {
 				System.out.print(arr[top][i]+" ");
