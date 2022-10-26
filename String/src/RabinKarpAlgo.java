@@ -21,7 +21,7 @@ public class RabinKarpAlgo {
 					flag=false;
 			}
 			if(flag==true)
-				System.out.println(i+" ");
+				System.out.print(i+" ");
 		}
 		if(i<n-m) {
 			t=(d*(t-(word.charAt(i)*h))+word.charAt(i+m))%q;
